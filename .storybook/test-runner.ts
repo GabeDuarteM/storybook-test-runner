@@ -3,6 +3,20 @@ import { toMatchImageSnapshot } from "jest-image-snapshot";
 
 const customSnapshotsDir = `${process.cwd()}/__snapshots__`;
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const waitForPageReady2 = async (page) => {
+  console.log("Start waiting for page to be ready");
+  await page.waitForLoadState("domcontentloaded");
+  console.log("DOM content loaded");
+  await page.waitForLoadState("load");
+  console.log("Page loaded");
+  await page.waitForLoadState("networkidle");
+  // console.log("Network idle");
+  await page.evaluate(() => document.fonts.ready);
+  console.log("Fonts ready");
+};
+
 const config: TestRunnerConfig = {
   async prepare({ page, browserContext, testRunnerConfig }) {
     page.setDefaultTimeout(5 * 60 * 1000);
@@ -32,7 +46,9 @@ const config: TestRunnerConfig = {
   },
   async postVisit(page, context) {
     // use the test-runner utility to wait for fonts to load, etc.
-    await waitForPageReady(page);
+    // await waitForPageReady(page);
+    await waitForPageReady2(page);
+    // await sleep(5 * 1000);
 
     // If you want to take screenshot of multiple browsers, use
     // page.context().browser().browserType().name() to get the browser name to prefix the file name
