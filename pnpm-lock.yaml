@@ -10,7 +10,7 @@ dependencies:
     version: 0.17.0(@types/node@20.12.7)
   next:
     specifier: 14.2.1
-    version: 14.2.1(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.2.1(@babel/core@7.24.4)(@playwright/test@1.43.1)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18
     version: 18.2.0
@@ -22,6 +22,9 @@ devDependencies:
   '@chromatic-com/storybook':
     specifier: ^1.3.3
     version: 1.3.3(react@18.2.0)
+  '@playwright/test':
+    specifier: ^1.43.1
+    version: 1.43.1
   '@storybook/addon-essentials':
     specifier: ^8.0.8
     version: 8.0.8(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
@@ -2119,6 +2122,13 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@playwright/test@1.43.1:
+    resolution: {integrity: sha512-HgtQzFgNEEo4TE22K/X7sYTYNqEMMTZmFS8kTq6m8hXj+m1D8TgwgIbumHddJa9h4yl4GkKb8/bgAl2+g7eDgA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright: 1.43.1
+
   /@pmmmwh/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(webpack@5.91.0):
     resolution: {integrity: sha512-7j/6vdTym0+qZ6u4XbSAxrWBGYSdCfTzySkj7WAFgDLmSyWlOrWvpyzxlFh5jtw9dn0oL/jtW+06XfFiisN3JQ==}
     engines: {node: '>= 10.13'}
@@ -2855,7 +2865,7 @@ packages:
       fs-extra: 11.2.0
       image-size: 1.1.1
       loader-utils: 3.2.1
-      next: 14.2.1(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.2.1(@babel/core@7.24.4)(@playwright/test@1.43.1)(react-dom@18.2.0)(react@18.2.0)
       node-polyfill-webpack-plugin: 2.0.1(webpack@5.91.0)
       pnp-webpack-plugin: 1.7.0(typescript@5.4.5)
       postcss: 8.4.38
@@ -6677,7 +6687,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /fsevents@2.3.3:
@@ -8638,7 +8647,7 @@ packages:
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  /next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0):
+  /next@14.2.1(@babel/core@7.24.4)(@playwright/test@1.43.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-SF3TJnKdH43PMkCcErLPv+x/DY1YCklslk3ZmwaVoyUfDgHKexuKlf9sEfBQ69w+ue8jQ3msLb+hSj1T19hGag==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -8657,6 +8666,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 14.2.1
+      '@playwright/test': 1.43.1
       '@swc/helpers': 0.5.5
       busboy: 1.6.0
       caniuse-lite: 1.0.30001610
@@ -9281,7 +9291,6 @@ packages:
     resolution: {integrity: sha512-EI36Mto2Vrx6VF7rm708qSnesVQKbxEWvPrfA1IPY6HgczBplDx7ENtx+K2n4kJ41sLLkuGfmb0ZLSSXlDhqPg==}
     engines: {node: '>=16'}
     hasBin: true
-    dev: false
 
   /playwright@1.43.1:
     resolution: {integrity: sha512-V7SoH0ai2kNt1Md9E3Gwas5B9m8KR2GVvwZnAI6Pg0m3sh7UvgiYhRrhsziCmqMJNouPckiOhk8T+9bSAK0VIA==}
@@ -9291,7 +9300,6 @@ packages:
       playwright-core: 1.43.1
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /pngjs@3.4.0:
     resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
